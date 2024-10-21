@@ -74,8 +74,8 @@ To build the C/C++ client, follow these steps:
    This two things you need to add to PATH folder on your PC.
 2. **Create .exe file**:
    You can do it in two ways:
-     1. You can run CMake in Visual Code, it will create new Build folder with main.exe file.
-     2. You can run build.bat file, it will create out folder and in Debug folder you can find client.exe file.
+     a) You can run CMake in Visual Code, it will create new Build folder with main.exe file.
+     b) You can run build.bat file, it will create out folder and in Debug folder you can find client.exe file.
 
 
 ### Building the Arduino Server
