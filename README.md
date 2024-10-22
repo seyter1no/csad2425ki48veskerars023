@@ -56,4 +56,42 @@ Game should have a menu that allows to configure parameters
 3) **Config format:** INI
 
 # Technical details:
-In this project i'm going to use Qt&C++. As for the HW I'm going to use Ardeino.
+In this project i'm going to use Qt&C/C++. As for the HW I'm going to use Arduino Nano.
+
+# Task 2: Creating Communication Between C/C++ Client and Arduino Server
+
+This section outlines how to build the project for the C/C++ client and the Arduino server.
+
+## 1. How to Build the Project for the Client and Arduino Server
+
+### Building the Client
+
+To build the C/C++ client, follow these steps:
+
+1. **Download Dependencies**:
+   You need to download CMake. You can download it from this link: https://cmake.org/download/
+   Also you need to have Arduino-cli. You can download it from this link: https://arduino.github.io/arduino-cli/0.35/installation/
+   This two things you need to add to PATH folder on your PC.
+2. **Create .exe file**:
+   You can do it in two ways:
+       a) You can run CMake in Visual Code, it will create new Build folder with main.exe file.
+       b) You can run build.bat file, it will create out folder and in Debug folder you can find client.exe file.
+
+
+### Building the Arduino Server
+To build the Arduino server, perform the following actions:
+
+1. **Install Arduino IDE**: Download and install the Arduino IDE if you haven't already.
+
+2. **Open the Project**: Open the `UARTserver.ino` in folder */UARTserver in the Arduino IDE.
+
+3. **Compile the Code**: Click on the **Verify** button (checkmark icon) in the IDE to compile the code. Ensure that there are no errors in the code.
+
+4. **Connect device**: Connect your Arduino Uno.
+
+5. **Upload Code to your Arduino** 
+
+
+## 2. How to Run the Client and Arduino Server
+
+  **You just have to connect the board to the computer and run one of the executable files, then the communication between the board and the client will begin.**
