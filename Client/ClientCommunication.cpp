@@ -4,7 +4,7 @@
 bool SerialCommunication::connect(const std::string& portName, int baudRate) {
     hSerial = CreateFile(portName.c_str(), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
     if (hSerial == INVALID_HANDLE_VALUE) {
-        std::cerr << "Failed to open port: " << portName << std::endl;
+        std::cerr << "Не вдалося відкрити порт: " << portName << std::endl;
         return false;
     }
 
@@ -16,7 +16,7 @@ bool SerialCommunication::connect(const std::string& portName, int baudRate) {
     dcb.Parity = NOPARITY;
 
     if (!SetCommState(hSerial, &dcb)) {
-        std::cerr << "Failed to configure port settings." << std::endl;
+        std::cerr << "Не вдалося налаштувати параметри порту." << std::endl;
         CloseHandle(hSerial);
         return false;
     }
@@ -30,7 +30,7 @@ bool SerialCommunication::connect(const std::string& portName, int baudRate) {
     timeouts.WriteTotalTimeoutMultiplier = 10;
 
     if (!SetCommTimeouts(hSerial, &timeouts)) {
-        std::cerr << "Failed to set communication timeouts." << std::endl;
+        std::cerr << "Не вдалося встановити таймаути комунікації." << std::endl;
         CloseHandle(hSerial);
         return false;
     }
@@ -47,23 +47,40 @@ void SerialCommunication::disconnect() {
 
 std::string SerialCommunication::sendMessage(const std::string& message) {
     if (hSerial == INVALID_HANDLE_VALUE) {
-        std::cerr << "Serial port not open." << std::endl;
+        std::cerr << "Серійний порт не відкритий." << std::endl;
         return "";
     }
 
     DWORD bytesWritten;
     if (!WriteFile(hSerial, message.c_str(), message.size(), &bytesWritten, nullptr)) {
-        std::cerr << "Failed to write to serial port." << std::endl;
+        std::cerr << "Не вдалося записати в серійний порт." << std::endl;
         return "";
     }
 
     char buffer[256];
     DWORD bytesRead;
     if (!ReadFile(hSerial, buffer, sizeof(buffer) - 1, &bytesRead, nullptr)) {
-        std::cerr << "Failed to read from serial port." << std::endl;
+        std::cerr << "Не вдалося прочитати з серійного порту." << std::endl;
         return "";
     }
     buffer[bytesRead] = '\0';
 
     return std::string(buffer);
+}
+
+void SerialCommunication::drawBoard(const std::string& boardState) {
+    std::cout << "-------------\n";
+    for (int i = 0; i < 3; i++) {
+        std::cout << "| ";
+        for (int j = 0; j < 3; j++) {
+            char cell = boardState[i * 3 + j];
+            if (cell == 'X' || cell == 'O') {
+                std::cout << cell << " | ";
+            } else {
+                // Якщо значення не 'X' або 'O', виводимо пусту клітинку
+                std::cout << " " << " | ";
+            }
+        }
+        std::cout << "\n-------------\n";
+    }
 }

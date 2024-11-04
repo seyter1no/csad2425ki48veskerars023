@@ -12,6 +12,7 @@ public:
     bool connect(const std::string& port, int baudRate);
     std::string sendMessage(const std::string& message);
     void disconnect();
+    void drawBoard(const std::string& boardState);
 };
 
 #endif // COMMUNICATION_H
