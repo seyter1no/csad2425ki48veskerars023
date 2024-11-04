@@ -61,8 +61,8 @@ void handleManvsMan(String command) {
         char player = (playerCount % 2 == 0) ? PLAYER_X : PLAYER_O;
 
         if (makePlayerMove(position, player)) {
-            checkGameStatus();
             printBoardGraphically();
+            checkGameStatus();
             playerCount++;
         } else {
             Serial.println("InvalidMove");
@@ -79,8 +79,8 @@ void handleManvsAI(String command) {
                 int aiMove[2];
                 bestMove(PLAYER_O, aiMove);
                 makeAIMove(aiMove, PLAYER_O);
-                checkGameStatus();
                 printBoardGraphically();
+                checkGameStatus();
             }
         } else {
             Serial.println("InvalidMove");
