@@ -1,5 +1,9 @@
 #include "Communication.h"
 #include <iostream>
+#include "INIReader.h"
+
+std::string port;
+int baudRate;
 
 bool SerialCommunication::connect(const std::string& portName, int baudRate) {
     hSerial = CreateFile(portName.c_str(), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
@@ -82,5 +86,21 @@ void SerialCommunication::drawBoard(const std::string& boardState) {
             }
         }
         std::cout << "\n-------------\n";
+    }
+}
+
+void loadConfig(const std::string& filename) {
+    INIReader reader(filename);
+
+    if (reader.ParseError() < 0) {
+        std::cerr << "Failed to load configuration file: " << filename << std::endl;
+        return;
+    }
+
+    port = reader.Get("Connection", "port", "");
+    baudRate = reader.GetInteger("Connection", "baudRate", 0);
+
+    if (port.empty() || baudRate == 0) {
+        std::cerr << "Problem reading settings. Verify that the file has the correct format and value." << std::endl;
     }
 }

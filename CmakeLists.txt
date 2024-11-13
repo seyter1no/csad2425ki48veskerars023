@@ -9,12 +9,22 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Вказуємо директорію з заголовочними файлами
 include_directories(${CMAKE_SOURCE_DIR}/Client)
+include_directories(${CMAKE_SOURCE_DIR}/external/inih)  # Додаємо шлях до inih
+
+# Додаємо бібліотеку inih
+add_library(inih STATIC
+    ${CMAKE_SOURCE_DIR}/external/inih/ini.c
+    ${CMAKE_SOURCE_DIR}/external/inih/INIReader.cpp
+)
 
 # Додаємо виконуваний файл для клієнта
 add_executable(client
     Client/ClientCommunication.cpp
     Client/ClientMain.cpp
 )
+
+# Підключаємо бібліотеку inih до клієнта
+target_link_libraries(client inih)
 
 # Змінні для Arduino
 set(ARDUINO_CLI "arduino-cli")

@@ -2,8 +2,8 @@
 
 set SERVER_PATH="%~dp0UARTserver\UARTserver.ino"
 
-REM Компіляція клієнтського додатку
-g++ -o Build\main.exe Client\ClientMain.cpp Client\ClientCommunication.cpp Client\Communication.h
+REM Компіляція клієнтського додатку з бібліотекою inih
+g++ -o Build\main.exe Client\ClientMain.cpp Client\ClientCommunication.cpp external\inih\INIReader.cpp external\inih\ini.c -Iexternal\inih
 if %errorlevel% neq 0 (
     echo [ERROR] Compilation of client application failed.
     pause

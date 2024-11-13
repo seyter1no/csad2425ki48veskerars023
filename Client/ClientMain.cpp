@@ -4,16 +4,19 @@
 int main()
 {
     try
-    {
+    {   
+        // Завантажуємо конфігурацію з файлу
+        loadConfig("../config/config.ini");
+        std::cout << "Configuration loaded: Port = " << port << ", BaudRate = " << baudRate << std::endl;
+
         SerialCommunication serial;
-        std::string port = "COM5";
-        int baudRate = 9600;
 
         if (!serial.connect(port, baudRate))
         {
             std::cerr << "Unable to connect to Arduino!" << std::endl;
             return 1;
         }
+
 
         std::cout << "Welcome to the game of Tic-Tac-Toe!" << std::endl;
         std::string response = serial.sendMessage("StartGame\n");
@@ -33,7 +36,6 @@ int main()
                 // Цикл для відображення стану гри в режимі AI vs AI
                 while (true)
                 {
-
                     response = serial.sendMessage("GetGameState\n");
 
                     // Виводимо стан дошки

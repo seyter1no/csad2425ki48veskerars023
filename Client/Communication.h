@@ -4,6 +4,9 @@
 #include <string>
 #include <windows.h> // Для використання Windows API
 
+extern std::string port;
+extern int baudRate;
+
 class SerialCommunication {
 private:
     HANDLE hSerial = INVALID_HANDLE_VALUE;
@@ -14,5 +17,7 @@ public:
     void disconnect();
     void drawBoard(const std::string& boardState);
 };
+
+void loadConfig(const std::string& filename);
 
 #endif // COMMUNICATION_H
