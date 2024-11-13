@@ -1,6 +1,11 @@
 #include <iostream>
 #include "Communication.h"
 
+/**
+ * @brief Main function to load configuration, establish serial connection, and manage user interaction.
+ * @return Exit status (0 for success, 1 for failure).
+ */
+
 int main()
 {
     try
