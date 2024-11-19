@@ -1,0 +1,5 @@
+if(EXISTS "D:/csad/lab5tests/out/build/default/client_tests[1]_tests.cmake")
+  include("D:/csad/lab5tests/out/build/default/client_tests[1]_tests.cmake")
+else()
+  add_test(client_tests_NOT_BUILT client_tests_NOT_BUILT)
+endif()

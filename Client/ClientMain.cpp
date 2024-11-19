@@ -10,11 +10,13 @@ int main()
 {
     try
     {   
-        // Завантажуємо конфігурацію з файлу
-        loadConfig("../config/config.ini");
-        std::cout << "Configuration loaded: Port = " << port << ", BaudRate = " << baudRate << std::endl;
 
         SerialCommunication serial;
+        // Завантажуємо конфігурацію з файлу
+        serial.loadConfig("../config/config.ini");
+        std::cout << "Configuration loaded: Port = " << port << ", BaudRate = " << baudRate << std::endl;
+
+        
 
         if (!serial.connect(port, baudRate))
         {

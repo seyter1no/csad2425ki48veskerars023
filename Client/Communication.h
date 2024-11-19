@@ -42,11 +42,12 @@ public:
      * @param boardState The string representing the current board state.
      */
     void drawBoard(const std::string& boardState);
+    /**
+     * @brief Loads configuration values from an INI file.
+     * @param filename The path to the INI configuration file.
+     */
+    void loadConfig(const std::string& filename);
 };
-/**
- * @brief Loads configuration values from an INI file.
- * @param filename The path to the INI configuration file.
- */
-void loadConfig(const std::string& filename);
+
 
 #endif // COMMUNICATION_H

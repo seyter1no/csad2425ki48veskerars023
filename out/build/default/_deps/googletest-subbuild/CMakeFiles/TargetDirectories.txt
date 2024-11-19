@@ -1,0 +1,3 @@
+D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/ALL_BUILD.dir
+D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/ZERO_CHECK.dir

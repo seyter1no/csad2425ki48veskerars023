@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/a08838df5822a2c13e9ed35e444ec932/googletest-populate.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/a0f999c63a2c84767e2f8a6f180d1cc0/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-build.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-download.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-install.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-test.rule"
+		},
+		{
+			"file" : "D:/csad/lab5tests/out/build/default/_deps/googletest-subbuild/CMakeFiles/d38ee3354e1b3825e6d8f60077644ee1/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}
