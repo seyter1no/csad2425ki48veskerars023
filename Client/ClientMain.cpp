@@ -1,15 +1,22 @@
 #include <iostream>
 #include "Communication.h"
 
+/**
+ * @brief Main function to load configuration, establish serial connection, and manage user interaction.
+ * @return Exit status (0 for success, 1 for failure).
+ */
+
 int main()
 {
     try
     {   
-        // Завантажуємо конфігурацію з файлу
-        loadConfig("../config/config.ini");
-        std::cout << "Configuration loaded: Port = " << port << ", BaudRate = " << baudRate << std::endl;
 
         SerialCommunication serial;
+        // Завантажуємо конфігурацію з файлу
+        serial.loadConfig("../config/config.ini");
+        std::cout << "Configuration loaded: Port = " << port << ", BaudRate = " << baudRate << std::endl;
+
+        
 
         if (!serial.connect(port, baudRate))
         {

@@ -1,0 +1,20 @@
+^D:\CSAD\LAB5TESTS\OUT\BUILD\DEFAULT\CMAKEFILES\198C8CC14AA7D9237F07865765F9C212\COMPILE_SERVER.RULE
+setlocal
+arduino-cli compile --fqbn arduino:avr:nano D:/csad/lab5tests/UARTserver/UARTserver.ino
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\CSAD\LAB5TESTS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/csad/lab5tests -BD:/csad/lab5tests/out/build/default --check-stamp-file D:/csad/lab5tests/out/build/default/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

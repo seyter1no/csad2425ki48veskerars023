@@ -89,7 +89,7 @@ void SerialCommunication::drawBoard(const std::string& boardState) {
     }
 }
 
-void loadConfig(const std::string& filename) {
+void SerialCommunication::loadConfig(const std::string& filename) {
     INIReader reader(filename);
 
     if (reader.ParseError() < 0) {
